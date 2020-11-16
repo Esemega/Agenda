@@ -34,6 +34,21 @@ var WORK_HOURS = [
 //Algorithm
 //1. Random availability generator
 //1.1. Generate the availability
+
 //1.2. Print the availability for each team member
 
-//2. Look for a the first free space for a meeting
+var showTeamAvailability = () => {
+    for (member of myTeam){
+        console.log("%c%s%s", "font-weight: 900", "Disponibilidad de ", member.name);
+        for (i = 0;i < member.availability.length; i++) {
+            var availability = member.availability[i] ? "Sí" : "No"
+            console.log(WORK_HOURS[i]+": "+availability)
+        }
+    console.log("------------------")
+    }
+}
+
+showTeamAvailability();
+
+
+//2. Look for the first free space for a meeting
