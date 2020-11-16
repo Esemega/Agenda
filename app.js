@@ -62,3 +62,18 @@ showTeamAvailability();
 
 
 //2. Look for the first free space for a meeting
+
+var availabilitySearcher = () => {
+    var availabilityCount = 0;
+    for (i = 0;i < WORK_HOURS.length; i++) {
+        for (j = 0; j < myTeam.length; j++) {
+            availabilityCount +=  Number(myTeam[j].availability[i])
+        }
+        if (availabilityCount === myTeam.length) return "Hueco encontrado en el horario "+WORK_HOURS[i]
+        availabilityCount = 0;
+    }
+    return "Lo siento. No hay hueco disponible en el equipo."
+}
+
+
+console.log(availabilitySearcher());
