@@ -35,6 +35,16 @@ var WORK_HOURS = [
 //1. Random availability generator
 //1.1. Generate the availability
 
+var randomAvailabilityGenerator = () => {
+    for (member of myTeam){
+        for (i = 0;i < member.availability.length; i++) {
+            member.availability[i] = Boolean(Math.round(Math.random()));
+        }
+    }
+}
+
+randomAvailabilityGenerator();
+
 //1.2. Print the availability for each team member
 
 var showTeamAvailability = () => {
